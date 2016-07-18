@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F</title>
     <link rel="stylesheet" href="css/foundation.css">
+    <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="js/app.js">
-     <title>Socket.IO chat</title>
+     <title>Fire chat</title>
     <!--<style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
@@ -53,9 +54,13 @@
 </div>
   </div>
 </div>
+<div class="small-12 medium-6 columns" id="div">
+<h3 id="h3">Chat, Connect and Communicate!</h3>
+<p id="p">Just sign up and connect with your loved ones. <br> It is free and quick. Leave a comment after you sign up.</p>
+</div>
     <ul id="messages"></ul>
     <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
+      <input id="m" autocomplete="off" /><button>Comment</button>
     </form>
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
@@ -70,6 +75,19 @@
         $('#messages').append($('<li>').text(msg));
       });
     </script>
+
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyACDVOr4JeYXMJXYJnqH9VOMKISCnA6hFA",
+    authDomain: "chat-on-43a38.firebaseapp.com",
+    databaseURL: "https://chat-on-43a38.firebaseio.com",
+    storageBucket: "",
+  };
+  var xyz = firebase.initializeApp(config);
+</script>
+    
     
 
     <script src="js/vendor/jquery.js"></script>
