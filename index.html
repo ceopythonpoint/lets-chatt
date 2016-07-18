@@ -57,24 +57,41 @@
 <div class="small-12 medium-6 columns" id="div">
 <h3 id="h3">Chat, Connect and Communicate!</h3>
 <p id="p">Just sign up and connect with your loved ones. <br> It is free and quick. Leave a comment after you sign up.</p>
-</div>
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Comment</button>
+ <div id="wrapper">
+    <div id="menu">
+        <p class="welcome">Welcome, <b></b></p>
+        <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+        <div style="clear:both"></div>
+    </div>
+     
+    <div id="chatbox"></div>
+     
+    <form name="message" action="">
+        <input name="usermsg" type="text" id="usermsg" size="63" />
+        <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
     </form>
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-      var socket = io();
-      $('form').submit(function(){
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
-        return false;
-      });
-      socket.on('chat message', function(msg){
-        $('#messages').append($('<li>').text(msg));
-      });
-    </script>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script type="text/javascript">
+// jQuery Document
+$(document).ready(function(){
+ 
+});
+</script>
+<script type="text/javascript">
+// jQuery Document
+$(document).ready(function(){
+  //If user wants to end session
+  $("#exit").click(function(){
+    var exit = confirm("Are you sure you want to end the session?");
+    if(exit==true){window.location = 'index.php?logout=true';}    
+  });
+});
+</script>
+</div>
+
+    
 
 
 <script>
